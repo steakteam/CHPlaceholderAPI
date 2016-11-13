@@ -21,8 +21,8 @@ public class CHPlaceholderHook extends EZPlaceholderHook {
     }
     @Override
     public String onPlaceholderRequest(Player player, String s) {
-        if(s.startsWith("get_value_")) {
-            String key = s.replaceFirst("get_value_", s);
+        if(s.startsWith("ch_get_value_")) {
+            String key = s.replaceFirst("ch_get_value_", s);
             Object value = null;
             try {
                 value = CommandHelperPlugin.self.persistenceNetwork.get(("storage." + key).split("\\."));
@@ -37,8 +37,8 @@ public class CHPlaceholderHook extends EZPlaceholderHook {
             } catch (MarshalException e) {
                 return "";
             }
-        } else if(s.startsWith("import_")) {
-            String key = s.replaceFirst("import_", s);
+        } else if(s.startsWith("ch_import_")) {
+            String key = s.replaceFirst("ch_import_", s);
             Construct c = Globals.GetGlobalConstruct(key);
             if(c instanceof CNull) {
                 return "";
