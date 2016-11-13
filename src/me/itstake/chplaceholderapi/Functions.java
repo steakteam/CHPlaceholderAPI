@@ -1,5 +1,6 @@
 package me.itstake.chplaceholderapi;
 
+import com.laytonsmith.PureUtilities.SimpleVersion;
 import com.laytonsmith.PureUtilities.Version;
 import com.laytonsmith.abstraction.MCPlayer;
 import com.laytonsmith.abstraction.bukkit.entities.BukkitMCPlayer;
@@ -63,12 +64,12 @@ public class Functions {
 
         @Override
         public Version since() {
-            return null;
+            return new SimpleVersion(1, 0, 0);
         }
 
         @Override
         public String getName() {
-            return null;
+            return "placeholderapi_parse";
         }
 
         @Override
@@ -78,7 +79,7 @@ public class Functions {
 
         @Override
         public String docs() {
-            return null;
+            return "string {[player], target} parse placeholder using placeholderapi";
         }
     }
 }
